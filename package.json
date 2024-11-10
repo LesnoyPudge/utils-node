@@ -1,0 +1,45 @@
+{
+    "name": "@lesnoypudge/utils-node",
+    "author": "LesnoyPudge",
+    "version": "1.0.0",
+    "description": "lesnoypudge's utils-node",
+    "license": "ISC",
+    "keywords": [
+        "lesnoypudge",
+        "utils",
+        "node"
+    ],
+    "files": [
+        "build"
+    ],
+    "type": "module",
+    "types": "./build/index.d.ts",
+    "main": "./build/index.js",
+    "exports": {
+        ".": {
+            "import": "./build/index.js",
+            "require": "./build/index.js",
+            "types": "./build/index.d.ts"
+        },
+        "./package.json": "./package.json"
+    },
+    "scripts": {
+        "publish": "npm publish --access public",
+        "deploy": "git add . && git commit -m 'update' && git push && git status",
+        "build": "builder --file tsconfig.node.build.json",
+        "test:check": "vitest run"
+    },
+    "devDependencies": {
+        "@lesnoypudge/builder": "^2.0.1",
+        "@lesnoypudge/eslint-config": "^4.0.0",
+        "@lesnoypudge/formatter-config": "^6.1.0",
+        "jsdom": "^25.0.1",
+        "vite-tsconfig-paths": "^5.1.0",
+        "vitest": "^2.1.4"
+    },
+    "dependencies": {
+        "@lesnoypudge/types-global-base": "^4.0.0",
+        "@lesnoypudge/types-global-node": "^1.0.0",
+        "@lesnoypudge/utils": "^14.1.0"
+    }
+}

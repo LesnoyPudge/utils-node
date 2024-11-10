@@ -1,0 +1,25 @@
+{
+    "extends": "./tsconfig.base.json",
+    "include": [
+        "**/*",
+        "node_modules/@types"
+    ],
+    "exclude": [],
+    "compilerOptions": {
+        "types": [
+            "@lesnoypudge/types-global-base",
+            "@lesnoypudge/types-global-node",
+            "vitest/globals",
+        ],
+        "paths": {
+            "@root": [
+                "src/index.ts"
+            ],
+        },
+        "lib": [
+            "ES2023",
+            "DOM",
+            "DOM.Iterable"
+        ]
+    }
+}
