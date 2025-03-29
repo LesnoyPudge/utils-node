@@ -1,7 +1,7 @@
 {
     "name": "@lesnoypudge/utils-node",
     "author": "LesnoyPudge",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "lesnoypudge's utils-node",
     "license": "ISC",
     "keywords": [
@@ -12,6 +12,7 @@
     "files": [
         "build"
     ],
+    "sideEffects": false,
     "type": "module",
     "types": "./build/index.d.ts",
     "main": "./build/index.js",
@@ -24,16 +25,18 @@
         "./package.json": "./package.json"
     },
     "scripts": {
-        "publish": "npm publish --access public",
+        "publish:npm": "npm publish --access public",
         "deploy": "git add . && git commit -m 'update' && git push && git status",
         "build": "builder --file tsconfig.node.build.json",
-        "test:check": "vitest run"
+        "test:check": "vitest run",
+        "prepublishOnly": "npm run build"
     },
     "devDependencies": {
         "@lesnoypudge/builder": "^2.0.1",
-        "@lesnoypudge/eslint-config": "^4.0.0",
+        "@lesnoypudge/eslint-config": "^11.0.0",
         "@lesnoypudge/formatter-config": "^6.1.0",
         "jsdom": "^25.0.1",
+        "typescript": "^5.7.3",
         "vite-tsconfig-paths": "^5.1.0",
         "vitest": "^2.1.4"
     },
